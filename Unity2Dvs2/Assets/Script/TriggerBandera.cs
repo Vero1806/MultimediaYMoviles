@@ -19,7 +19,6 @@ public class TriggerBandera : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         puntosBandera.totalScore += 50;
         Destroy(this.gameObject);
     }
