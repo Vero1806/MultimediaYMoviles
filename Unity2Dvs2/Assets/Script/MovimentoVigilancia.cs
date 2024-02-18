@@ -4,19 +4,43 @@ using UnityEngine;
 
 public class MovimentoVigilancia : MonoBehaviour
 {
-    public float velo;
-    public float dist;
-    private Vector2 starPosition;
-     // Start is called before the first frame update
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private Transform[] pointMovement;
+    [SerializeField] private float minDistance;
+
+    private int numAletorio;
+    private SpriteRenderer spriteRenderer;
+
+    // Start is called before the first frame update
     void Start()
     {
-        starPosition = transform.position;
+        numAletorio = Random.Range(0, pointMovement.Length);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        Giro();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float movimiento = Mathf.Sin(Time.time * velo) * dist;
-        transform.position = new Vector2(starPosition.x + movimiento, transform.position.y);
+        transform.position = Vector2.MoveTowards(transform.position, pointMovement[numAletorio].position, moveSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, pointMovement[numAletorio].position) < minDistance)
+        {
+            numAletorio = Random.Range(0, pointMovement.Length);
+            Giro();
+        }
     }
+    private void Giro()
+    {
+        if (transform.position.x < pointMovement[numAletorio].position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
+    }
+
 }

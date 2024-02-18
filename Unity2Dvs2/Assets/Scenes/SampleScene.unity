@@ -1310,6 +1310,68 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7200813, y: 0.8305991}
   m_EdgeRadius: 0
+--- !u!1 &858960223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 858960224}
+  m_Layer: 0
+  m_Name: GirarIzquierda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &858960224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858960223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.32, y: 9.98, z: 1.026887}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &882822194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882822195}
+  m_Layer: 0
+  m_Name: GirarDerecha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882822195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882822194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.65, y: 9.8, z: 1.026887}
+  m_LocalScale: {x: 1.0312226, y: 0.6818, z: 0.6818}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000262852
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5124,7 @@ MonoBehaviour:
   surfaceLayer:
     serializedVersion: 2
     m_Bits: 64
-  isRunning: 1
+  isRunning: 0
 --- !u!111 &1076794316
 Animation:
   m_ObjectHideFlags: 0
@@ -5401,8 +5463,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73623345663fefd41ab7cf7bed1d40f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velo: 1.5
-  dist: 10
+  moveSpeed: 6
+  pointMovement:
+  - {fileID: 858960224}
+  - {fileID: 882822195}
+  minDistance: 0.3
 --- !u!61 &1555539420
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5972,3 +6037,5 @@ SceneRoots:
   - {fileID: 1017730752}
   - {fileID: 1666550192}
   - {fileID: 1192045552}
+  - {fileID: 858960224}
+  - {fileID: 882822195}

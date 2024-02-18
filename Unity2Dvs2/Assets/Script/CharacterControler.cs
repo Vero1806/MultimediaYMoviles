@@ -6,15 +6,20 @@ public class CharacterControler : MonoBehaviour
 {
     public float speed;
     float inputMovement;
-    private float jumpSpeed = 10f;
-    public int jumpsNums = 0;
     Rigidbody2D rigidBody;
+    public bool isLookingRight;
+    private float jumpSpeed = 10f;
+
+
+    public int jumpsNums = 0;
     private BoxCollider2D boxCollider;
-    public bool isLookingRight = true, arregloSalto = false;
+    
+    public bool arregloSalto;
     public LayerMask surfaceLayer;
 
-    public bool isRunning = true;
+    public bool isRunning;
     private Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +27,12 @@ public class CharacterControler : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
     }
-
-
     // Update is called once per frame
     void Update()
     {
         ProcessingMovement();
-        ProcessingJump();
         arregloSalto = CheckingFloor();
+        ProcessingJump();
     }
     bool CheckingFloor()
     {
@@ -53,6 +56,7 @@ public class CharacterControler : MonoBehaviour
         //Animation
         isRunning = inputMovement != 0 ? true : false;
         animator.SetBool("isRunning", isRunning);
+
 
         rigidBody.velocity = new Vector2(inputMovement * speed, rigidBody.velocity.y);
         CharacterOrientation(inputMovement);
