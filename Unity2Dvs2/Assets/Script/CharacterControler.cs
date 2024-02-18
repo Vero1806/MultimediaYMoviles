@@ -57,7 +57,6 @@ public class CharacterControler : MonoBehaviour
         isRunning = inputMovement != 0 ? true : false;
         animator.SetBool("isRunning", isRunning);
 
-
         rigidBody.velocity = new Vector2(inputMovement * speed, rigidBody.velocity.y);
         CharacterOrientation(inputMovement);
     }
