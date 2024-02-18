@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TriggerBandera : MonoBehaviour
 {
+
     public score puntosBandera;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,10 @@ public class TriggerBandera : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        puntosBandera.totalScore += 50;
-        Destroy(this.gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            puntosBandera.totalScore += 50;
+             
+        }
     }
 }

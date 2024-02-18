@@ -3,17 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pinchos
+  - fondo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - fondo
   - Water
   - UI
   - Surface
-  - 
-  - 
+  - Pinchos
+  - pj
   - 
   - 
   - 
@@ -40,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: fondo
+    uniqueID: 81022417
+    locked: 0
+  - name: pj
+    uniqueID: 641257031
+    locked: 0
+  - name: camara
+    uniqueID: 3736316439
     locked: 0

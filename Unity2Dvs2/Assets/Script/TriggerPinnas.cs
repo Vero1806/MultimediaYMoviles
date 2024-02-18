@@ -20,8 +20,10 @@ public class TriggerPinnas : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-     
-        puntosPinnas.totalScore += 10;
-        Destroy(this.gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            puntosPinnas.totalScore += 10;
+            Destroy(this.gameObject);
+        }
     }
 }

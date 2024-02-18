@@ -49,8 +49,11 @@ public class CharacterControler : MonoBehaviour
     {
         //Movement logic
         inputMovement = Input.GetAxis("Horizontal");
+
+        //Animation
         isRunning = inputMovement != 0 ? true : false;
         animator.SetBool("isRunning", isRunning);
+
         rigidBody.velocity = new Vector2(inputMovement * speed, rigidBody.velocity.y);
         CharacterOrientation(inputMovement);
     }
@@ -74,6 +77,20 @@ public class CharacterControler : MonoBehaviour
             isLookingRight = !isLookingRight;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pinchos")
+        {
+            Respawn();
+        }
+    }
+    void Respawn()
+    {
+        this.transform.position = new Vector3(0,0,0);
+        Debug.Log("You Dead. Try again");
+
     }
 
 }
