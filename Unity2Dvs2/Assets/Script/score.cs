@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class score : MonoBehaviour
@@ -7,6 +8,7 @@ public class score : MonoBehaviour
     
     
     public int totalScore;
+    public TMP_Text texto;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        texto.text = "Puntuación: " + totalScore;
         
     }
 }
