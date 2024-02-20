@@ -13,6 +13,7 @@ public class CharacterControler : MonoBehaviour
 
     public int jumpsNums = 0;
     private BoxCollider2D boxCollider;
+    private bool isJumping;
     
     public bool arregloSalto;
     public LayerMask surfaceLayer;
@@ -71,6 +72,8 @@ public class CharacterControler : MonoBehaviour
         {
             rigidBody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             jumpsNums++;
+            isJumping = true;
+            animator.SetBool("isJumping", isJumping);
             audioSource.PlayOneShot(jumpClip);
 
         }
