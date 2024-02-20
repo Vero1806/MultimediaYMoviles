@@ -20,12 +20,17 @@ public class CharacterControler : MonoBehaviour
     public bool isRunning;
     private Animator animator;
     
+    //Sonido
+    private AudioSource audioSource;
+    public AudioClip jumpClip;
+    
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -66,6 +71,7 @@ public class CharacterControler : MonoBehaviour
         {
             rigidBody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             jumpsNums++;
+            audioSource.PlayOneShot(jumpClip);
 
         }
 
