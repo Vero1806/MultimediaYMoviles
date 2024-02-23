@@ -13,7 +13,7 @@ public class CharacterControler : MonoBehaviour
 
     public int jumpsNums = 0;
     private BoxCollider2D boxCollider;
-    private bool isJumping;
+    public bool isJumping;
     
     public bool arregloSalto;
     public LayerMask surfaceLayer;
@@ -48,7 +48,7 @@ public class CharacterControler : MonoBehaviour
              0f, //Ángulo
              Vector2.down, //Direccion hacia la que va la caja
              0.2f, //Distancia a la que aparece la caja
-             surfaceLayer//Layer mask
+             surfaceLayer //Layer mask
              );
         return raycastHit.collider != null; //Devuelvo un valor siempre que no sea nulo
     }
@@ -73,12 +73,16 @@ public class CharacterControler : MonoBehaviour
             rigidBody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             jumpsNums++;
             isJumping = true;
-            animator.SetBool("isJumping", isJumping);
+            animator.SetBool("isJumping", arregloSalto);
             audioSource.PlayOneShot(jumpClip);
 
         }
 
-        if (arregloSalto) jumpsNums = 0;
+        if (arregloSalto)
+        {
+            jumpsNums = 0;
+            isJumping = false;
+        }
     }
 
 

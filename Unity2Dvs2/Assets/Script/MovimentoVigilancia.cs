@@ -11,12 +11,17 @@ public class MovimentoVigilancia : MonoBehaviour
     private int numAletorio;
     private SpriteRenderer spriteRenderer;
 
+    //sonido
+    private AudioSource audioSource;
+    public AudioClip closeClip;
+
     // Start is called before the first frame update
     void Start()
     {
         numAletorio = Random.Range(0, pointMovement.Length);
         spriteRenderer = GetComponent<SpriteRenderer>();
         Giro();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +34,7 @@ public class MovimentoVigilancia : MonoBehaviour
             numAletorio = Random.Range(0, pointMovement.Length);
             Giro();
         }
+        audioSource.PlayOneShot(closeClip);
     }
     private void Giro()
     {
