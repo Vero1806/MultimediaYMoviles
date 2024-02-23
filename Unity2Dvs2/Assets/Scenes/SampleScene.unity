@@ -5191,9 +5191,9 @@ GameObject:
   - component: {fileID: 1076794311}
   - component: {fileID: 1076794314}
   - component: {fileID: 1076794315}
-  - component: {fileID: 1076794317}
   - component: {fileID: 1076794318}
   - component: {fileID: 1076794319}
+  - component: {fileID: 1076794320}
   m_Layer: 8
   m_Name: Pj
   m_TagString: Player
@@ -5363,27 +5363,6 @@ MonoBehaviour:
     m_Bits: 64
   isRunning: 0
   jumpClip: {fileID: 8300000, guid: efce716985743f64796fb9d173bea2fc, type: 3}
---- !u!95 &1076794317
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076794310}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15ef839572ecc98428b6f34f90299822, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1076794318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5494,6 +5473,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1076794320
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076794310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15ef839572ecc98428b6f34f90299822, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1078837668
 GameObject:
   m_ObjectHideFlags: 0
