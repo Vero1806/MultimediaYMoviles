@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 36758832}
   - component: {fileID: 36758831}
   - component: {fileID: 36758830}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemigo 1
   m_TagString: Pinchos
   m_Icon: {fileID: 0}
@@ -15802,6 +15802,7 @@ GameObject:
   - component: {fileID: 1076794319}
   - component: {fileID: 1076794320}
   - component: {fileID: 1076794321}
+  - component: {fileID: 1076794322}
   m_Layer: 8
   m_Name: Pj
   m_TagString: Player
@@ -16118,6 +16119,21 @@ MonoBehaviour:
   - {fileID: 1641308389}
   - {fileID: 680203594}
   - {fileID: 599239821}
+--- !u!111 &1076794322
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076794310}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: bb3824f8afe738e4398853da5aae63fe, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1078837668
 GameObject:
   m_ObjectHideFlags: 0
@@ -16488,7 +16504,7 @@ GameObject:
   - component: {fileID: 1489610141}
   - component: {fileID: 1489610140}
   - component: {fileID: 1489610139}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemigo 2
   m_TagString: Pinchos
   m_Icon: {fileID: 0}
@@ -16826,7 +16842,7 @@ GameObject:
   - component: {fileID: 1555539416}
   - component: {fileID: 1555539420}
   - component: {fileID: 1555539419}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemigo
   m_TagString: Pinchos
   m_Icon: {fileID: 0}
@@ -18440,7 +18456,7 @@ GameObject:
   - component: {fileID: 2015715517}
   m_Layer: 0
   m_Name: Enemigos
-  m_TagString: Untagged
+  m_TagString: Pinchos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
