@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pinchos
   - fondo
+  - Vida
   layers:
   - Default
   - TransparentFX

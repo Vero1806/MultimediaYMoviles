@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterControler : MonoBehaviour
 {
@@ -24,7 +25,11 @@ public class CharacterControler : MonoBehaviour
     //Sonido
     private AudioSource audioSource;
     public AudioClip jumpClip;
-    
+
+    //Vidas
+    Vidas Vida;
+    private int vidas = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,14 +104,43 @@ public class CharacterControler : MonoBehaviour
     {
         if (collision.gameObject.tag == "Pinchos")
         {
-            Respawn();
+            // Respawn();
+            PerderVida();
+        }
+        if (collision.gameObject.tag == "Vida")
+        {
+            RecuperarVida();
         }
     }
     void Respawn()
     {
-        this.transform.position = new Vector3(0,0,0);
+        SceneManager.LoadScene(0);
         Debug.Log("You Dead. Try again");
 
     }
 
+    void PerderVida()
+    {
+        vidas -= 1;
+
+        if (vidas == 0)
+        {
+            // Reiniciamos el nivel.
+            Respawn();
+        }
+
+        Vida.DesactivarVida(vidas);
+    }
+
+    bool RecuperarVida()
+    {
+        if (vidas == 3)
+        {
+            return false;
+        }
+
+        Vida.ActivarVida(vidas);
+        vidas += 1;
+        return true;
+    }
 }

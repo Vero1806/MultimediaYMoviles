@@ -6,24 +6,19 @@ using UnityEngine.SocialPlatforms.Impl;
 public class TriggerPinnas : MonoBehaviour
 {
     public score puntosPinnas;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private AudioClip fruta1;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            ControladorSonidos.Instance.EjecutarSonido(fruta1);
             puntosPinnas.totalScore += 10;
             Destroy(this.gameObject);
+            
         }
     }
 }
