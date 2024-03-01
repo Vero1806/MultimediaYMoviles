@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,10 +26,16 @@ public class CharacterControler : MonoBehaviour
     //Sonido
     private AudioSource audioSource;
     public AudioClip jumpClip;
+    public AudioClip golpe;
+    public AudioClip muerte;
 
     //Vidas
-    Vidas Vida;
+    private Vidas Vida;
     private int vidas = 3;
+
+    //GameOver
+    public GameOver PantallaGameOver;
+    private score score;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +44,8 @@ public class CharacterControler : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        Vida = GetComponent<Vidas>();   
+
     }
     // Update is called once per frame
     void Update()
@@ -44,6 +53,8 @@ public class CharacterControler : MonoBehaviour
         ProcessingMovement();
         arregloSalto = CheckingFloor();
         ProcessingJump();
+        animator.SetBool("isJumping", !arregloSalto);
+
     }
     bool CheckingFloor()
     {
@@ -80,7 +91,6 @@ public class CharacterControler : MonoBehaviour
             isJumping = true;
             animator.SetBool("isJumping", arregloSalto);
             audioSource.PlayOneShot(jumpClip);
-
         }
 
         if (arregloSalto)
@@ -106,6 +116,7 @@ public class CharacterControler : MonoBehaviour
         {
             // Respawn();
             PerderVida();
+
         }
         if (collision.gameObject.tag == "Vida")
         {
@@ -122,11 +133,16 @@ public class CharacterControler : MonoBehaviour
     void PerderVida()
     {
         vidas -= 1;
+        audioSource.PlayOneShot(golpe);
 
         if (vidas == 0)
         {
+            audioSource.PlayOneShot(muerte);
             // Reiniciamos el nivel.
             Respawn();
+
+            // Backgraund GameOver
+            // GameOver();
         }
 
         Vida.DesactivarVida(vidas);
@@ -143,4 +159,10 @@ public class CharacterControler : MonoBehaviour
         vidas += 1;
         return true;
     }
+
+    //public void GameOver()
+    //{
+    //    PantallaGameOver.Jugar(score.totalScore);
+    //    SceneManager.LoadSceneAsync(1);
+    //}
 }

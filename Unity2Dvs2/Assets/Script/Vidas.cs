@@ -13,9 +13,9 @@ public class Vidas : MonoBehaviour
         
     }
 
-      public void DesactivarVida(int indice)
+    public void DesactivarVida(int indice)
     {
-        vidas[indice].SetActive(false);
+       vidas[indice].SetActive(false);
     }
 
     public void ActivarVida(int indice)
